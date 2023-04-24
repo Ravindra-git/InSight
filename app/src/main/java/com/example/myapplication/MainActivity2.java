@@ -1,0 +1,44 @@
+package com.example.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity2 extends AppCompatActivity {
+    private Button bCapture,bCapture1,bCapture2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        bCapture = findViewById(R.id.bCapture);
+        bCapture1 = findViewById(R.id.bCapture1);
+        bCapture2 = findViewById(R.id.bCapture2);
+
+        bCapture1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Bills", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity2.this,MainActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+
+        bCapture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "currency", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity2.this,MainActivity3.class);
+
+                startActivity(intent);
+            }
+        });
+
+    }
+}
